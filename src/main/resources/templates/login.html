@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>AssessMe Login</title>
+</head>
+<body>
+
+<div>
+  <div class="main">
+    <h1>AssessMe Login </h1>
+    <form method="post" th:action="@{/login}">
+      <div th:if="${param.error}">
+        <div style="font-size:14px; color:#8b0700; font-weight:bold;">
+          Unable to login. Please try again later.
+        </div>
+      </div>
+      <div>
+        <label>Email</label>
+        <div>
+          <input id="username" name="username" placeholder="Username" required type="text">
+        </div>
+      </div>
+      <div>
+        <label>Password</label>
+        <div>
+          <input class="form-control" id="password" name="password" placeholder="Password"
+                 required type="password">
+        </div>
+      </div>
+      <div>
+        <div>
+          <button type="Login">Sign in</button>
+        </div>
+
+
+      </div>
+
+      <div>
+        <div>
+          <input type="reset" value="Clear"/>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+
+  <a th:href="@{/registration}">Register</a>
+  <a th:href="@{/forget_password}">Forget password</a>
+</div>
+
+</body>
+</html>
